@@ -12,8 +12,8 @@ const addJob = async (req, res) => {
     };
     jobs.push(newJob);
     writeJobs(jobs);
-    setTimeout(() => {
-      getRandomFoodImage().then((res) => (newJob.result = res));
+    setTimeout(async () => {
+      newJob.result = await getRandomFoodImage();
       newJob.status = "resolved";
       writeJobs(jobs);
     }, Math.floor(Math.random() * (300000 - 5000 + 1)) + 5000);
