@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const { randomDelay, getRandomFoodImage } = require("./utilities");
 const { addJob, fetchJobs, fetchJob } = require("./controllers");
 
 const app = express();
